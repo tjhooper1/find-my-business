@@ -1,6 +1,6 @@
 export const SITE_NAME = "Sidequest Biz";
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://find-my-business-one.vercel.app";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.sidequestbiz.com";
 
 // TODO: replace both before applying to affiliate programs.
 export const CONTACT_EMAIL = "[contact email]";
