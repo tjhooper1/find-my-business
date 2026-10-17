@@ -1,0 +1,14 @@
+{
+  "name": "find-my-business",
+  "private": true,
+  "workspaces": [
+    "engine",
+    "web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "test": "npm test -w engine",
+    "personas": "npm run personas -w engine"
+  }
+}
