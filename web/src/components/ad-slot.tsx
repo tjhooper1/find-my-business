@@ -5,7 +5,10 @@ import { AD_SLOTS, ADSENSE_CLIENT } from "@/lib/site";
 
 declare global {
   interface Window {
-    adsbygoogle?: unknown[];
+    adsbygoogle?: unknown[] & { requestNonPersonalizedAds?: 0 | 1 };
+  }
+  interface Navigator {
+    globalPrivacyControl?: boolean;
   }
 }
 
@@ -16,7 +19,10 @@ export function AdSlot({ placement, className = "" }: { placement: keyof typeof 
   useEffect(() => {
     if (!slot) return;
     try {
-      (window.adsbygoogle = window.adsbygoogle ?? []).push({});
+      const ads = (window.adsbygoogle = window.adsbygoogle ?? []);
+      // Honor Global Privacy Control as an opt-out of targeted ads (the privacy policy promises this).
+      if (navigator.globalPrivacyControl) ads.requestNonPersonalizedAds = 1;
+      ads.push({});
     } catch {
       // Already filled (e.g. effects run twice in dev) or blocked by an ad blocker.
     }
