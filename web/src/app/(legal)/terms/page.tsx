@@ -62,7 +62,7 @@ export default function TermsPage() {
       <h2>Changes and contact</h2>
       <p>
         We may update these terms and will change the date below when we do. Questions? Contact us at{" "}
-        {CONTACT_EMAIL}.
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
     </>
   );

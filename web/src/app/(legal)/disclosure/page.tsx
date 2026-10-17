@@ -41,7 +41,7 @@ export default function DisclosurePage() {
       </p>
 
       <h2>Questions</h2>
-      <p>Contact us at {CONTACT_EMAIL}.</p>
+      <p>Contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
     </>
   );
 }

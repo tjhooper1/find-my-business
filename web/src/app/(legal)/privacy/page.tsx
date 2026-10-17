@@ -78,7 +78,7 @@ export default function PrivacyPage() {
       <h2>Changes and contact</h2>
       <p>
         We&apos;ll post any changes on this page and update the date below. Questions? Contact us at{" "}
-        {CONTACT_EMAIL}.
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
     </>
   );
