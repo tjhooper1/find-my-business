@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import {
   DIMENSIONS,
   QUESTIONS,
+  assignArchetype,
   computeProfile,
   matchBusinesses,
   type Constraints,
@@ -168,11 +169,30 @@ function ProfileSummary({ profile }: { profile: Profile }) {
     .sort((a, b) => Math.abs(profile[b.id] - 0.5) - Math.abs(profile[a.id] - 0.5))
     .slice(0, 3);
 
+  const { primary, secondary } = assignArchetype(profile);
+
   return (
     <section>
-      <p className="text-sm font-medium uppercase tracking-wide text-muted">Your business personality</p>
-      <h1 className="mt-2 text-3xl font-bold sm:text-4xl">Here&apos;s what makes you tick</h1>
-      <ul className="mt-4 space-y-1 text-lg">
+      <div className="rounded-3xl bg-brand-soft p-6 sm:p-8">
+        <p className="text-sm font-medium uppercase tracking-wide text-muted">Your founder type</p>
+        <h1 className="mt-2 text-3xl font-bold sm:text-5xl">
+          <span aria-hidden className="mr-2">
+            {primary.emoji}
+          </span>
+          {primary.name}
+        </h1>
+        <p className="mt-2 text-lg">
+          with a dash of{" "}
+          <strong>
+            {secondary.emoji} {secondary.name}
+          </strong>
+        </p>
+        <p className="mt-4 text-xl font-semibold">{primary.tagline}</p>
+        <p className="mt-2 max-w-2xl">{primary.description}</p>
+      </div>
+
+      <h2 className="mt-8 text-xl font-bold">What makes you tick</h2>
+      <ul className="mt-3 space-y-1 text-lg">
         {standouts.map((d) => (
           <li key={d.id}>
             You <strong>{profile[d.id] >= 0.5 ? d.high : d.low}</strong>.

@@ -1,4 +1,6 @@
-# Find My Business — Product & Technical Spec
+# Sidequest Biz — Product & Technical Spec
+
+*Formerly "Find My Business". The repo and package names keep the old name.*
 
 **Status:** Draft v0.2 · **Date:** 2026-10-17
 

@@ -63,12 +63,17 @@ export interface FitDetail {
 
 /** Personality fit, 0–100, from asymmetric weighted RMS distance. */
 export function fitScore(profile: Profile, business: Business): FitDetail {
+  return traitFit(profile, business.traits);
+}
+
+/** Fit of a profile against any set of trait targets (businesses, archetypes). */
+export function traitFit(profile: Profile, traits: Partial<Record<DimensionId, TraitTarget>>): FitDetail {
   let penalty = 0;
   let totalWeight = 0;
   const gaps: TraitGap[] = [];
 
   for (const dim of DIMENSION_IDS) {
-    const listed: TraitTarget | undefined = business.traits[dim];
+    const listed: TraitTarget | undefined = traits[dim];
     if (!listed) {
       const gap = profile[dim] - 0.5;
       penalty += IMPLICIT_WEIGHT * gap * gap;

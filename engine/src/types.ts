@@ -121,6 +121,24 @@ export interface Business {
   skills: string[];
 }
 
+// ---------- Archetypes ----------
+
+export interface Archetype {
+  id: string;
+  name: string;
+  emoji: string;
+  tagline: string;
+  description: string;
+  traits: Partial<Record<DimensionId, TraitTarget>>;
+}
+
+export interface ArchetypeResult {
+  primary: Archetype;
+  secondary: Archetype;
+  /** Every archetype with its 0–100 fit, best first. */
+  ranked: { archetype: Archetype; fit: number }[];
+}
+
 // ---------- Results ----------
 
 export type MatchMode = "fit" | "fit+skills" | "fit+learn";

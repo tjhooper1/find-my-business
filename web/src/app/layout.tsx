@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Find My Business: what business should you start?",
-    template: "%s | Find My Business",
+    default: "Sidequest Biz: what business should you start?",
+    template: "%s | Sidequest Biz",
   },
   description:
-    "A free 10-minute quiz that matches your personality, habits and goals to businesses you'd actually enjoy running.",
+    "A free 10-minute quiz that finds your founder type and matches you to businesses you'd actually enjoy running.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="border-b border-line">
           <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4">
             <Link href="/" className="text-lg font-bold tracking-tight">
-              Find My <span className="text-brand">Business</span>
+              Sidequest <span className="text-brand">Biz</span>
             </Link>
             <div className="flex items-center gap-4 text-sm">
               <Link href="/businesses" className="text-muted hover:text-ink">
