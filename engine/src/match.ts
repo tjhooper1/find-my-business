@@ -1,5 +1,5 @@
 import { BUSINESSES } from "./data/businesses";
-import { DIMENSION_BY_ID, SKILLS } from "./data/dimensions";
+import { DIMENSION_BY_ID } from "./data/dimensions";
 import { DIMENSION_IDS } from "./types";
 import type {
   Business,
@@ -32,7 +32,6 @@ const REASON_MIN_LEAN = 0.15;
 const WATCH_OUT_MIN_GAP = 0.25;
 
 const SKILL_CREDIT = { 0: 0, 1: 0.6, 2: 1 } as const;
-const SKILL_NAME = Object.fromEntries(SKILLS.map((s) => [s.id, s.name]));
 
 export interface MatchOptions {
   mode?: MatchMode;
@@ -113,7 +112,7 @@ export function readiness(business: Business, skills: SkillLevels): { score: num
   for (const id of business.skills) {
     const level = skills[id] ?? 0;
     total += SKILL_CREDIT[level];
-    if (level === 0) gaps.push(SKILL_NAME[id] ?? id);
+    if (level === 0) gaps.push(id);
   }
   return { score: total / business.skills.length, gaps };
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import type { Match, MatchMode } from "find-my-business-engine";
-import { formatCostRange, MODE_LABEL } from "@/lib/format";
+import { coursesForSkills, type Match, type MatchMode } from "find-my-business-engine";
+import { ResourceLink } from "@/components/resource-link";
+import { formatCostRange, MODE_LABEL, skillName } from "@/lib/format";
 
 export function MatchCard({ match, rank, mode }: { match: Match; rank: number; mode: MatchMode }) {
   const { business: b, fit, readiness, reasons, watchOuts, warnings, skillGaps } = match;
@@ -47,9 +48,18 @@ export function MatchCard({ match, rank, mode }: { match: Match; rank: number; m
       )}
 
       {mode === "fit+learn" && skillGaps.length > 0 && (
-        <p className="mt-3 text-sm">
-          <span className="font-semibold">Skills to pick up:</span> {skillGaps.join(", ")}
-        </p>
+        <div className="mt-3 text-sm">
+          <span className="font-semibold">Skills to pick up:</span>{" "}
+          {coursesForSkills(skillGaps).map((course, i) => (
+            <span key={course.id}>
+              {i > 0 && ", "}
+              <ResourceLink resource={course} className="text-accent-ink underline hover:no-underline">
+                {skillName(skillGaps[i]!)}
+              </ResourceLink>
+            </span>
+          ))}
+          <span className="text-muted"> (links to beginner courses)</span>
+        </div>
       )}
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4 text-sm">

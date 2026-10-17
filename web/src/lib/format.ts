@@ -1,4 +1,10 @@
-import type { BusinessMode } from "find-my-business-engine";
+import { SKILLS, type BusinessMode } from "find-my-business-engine";
+
+const SKILL_NAME = Object.fromEntries(SKILLS.map((s) => [s.id, s.name]));
+
+export function skillName(id: string): string {
+  return SKILL_NAME[id] ?? id;
+}
 
 export const MODE_LABEL: Record<BusinessMode, string> = {
   online: "Online",

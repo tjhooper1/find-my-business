@@ -121,6 +121,56 @@ export interface Business {
   skills: string[];
 }
 
+// ---------- Resources (starter kit, courses) ----------
+
+/** Where in the journey a resource helps. */
+export type ResourceStage = "validate" | "launch" | "grow";
+
+/** What job the resource does. A business shows at most one resource per need. */
+export type ResourceNeed =
+  | "guidance"
+  | "mentoring"
+  | "registration"
+  | "tax-id"
+  | "licensing"
+  | "insurance"
+  | "banking"
+  | "bookkeeping"
+  | "payments"
+  | "website"
+  | "store"
+  | "email"
+  | "scheduling"
+  | "field-service"
+  | "design"
+  | "marketplace"
+  | "production"
+  | "course-platform"
+  | "certification"
+  | "learning";
+
+export interface Resource {
+  id: string;
+  name: string;
+  description: string;
+  /** Destination. Swap for an affiliate URL once approved; links always go through /go/[id]. */
+  url: string;
+  need: ResourceNeed;
+  stage: ResourceStage;
+  /** Who sees it. Omitted = everyone; otherwise any one match qualifies. */
+  appliesTo?: {
+    modes?: BusinessMode[];
+    categories?: string[];
+    businesses?: string[];
+    skills?: string[];
+  };
+  /** Lower shows first within a need. Never derived from payout. */
+  priority: number;
+  free: boolean;
+  /** True once the URL is an affiliate link; drives the disclosure badge. */
+  affiliate: boolean;
+}
+
 // ---------- Archetypes ----------
 
 export interface Archetype {
@@ -154,6 +204,7 @@ export interface Match {
   reasons: string[];
   watchOuts: string[];
   warnings: string[];
+  /** Skill ids the user lacks (only outside "fit" mode). */
   skillGaps: string[];
 }
 

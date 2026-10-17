@@ -49,9 +49,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </header>
         <main className="flex-1">{children}</main>
         <footer className="border-t border-line">
-          <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-muted">
-            For self-reflection and inspiration, not professional, financial or legal advice. Cost
-            and timing figures are rough estimates.
+          <div className="mx-auto max-w-5xl space-y-3 px-4 py-8 text-sm text-muted">
+            <p>
+              For self-reflection and inspiration, not professional, financial or legal advice. Cost and timing
+              figures are rough estimates. Some links are affiliate links.
+            </p>
+            <nav className="flex flex-wrap gap-4">
+              <Link href="/privacy" className="hover:text-ink">
+                Privacy
+              </Link>
+              <Link href="/terms" className="hover:text-ink">
+                Terms
+              </Link>
+              <Link href="/disclosure" className="hover:text-ink">
+                Affiliate disclosure
+              </Link>
+            </nav>
           </div>
         </footer>
       </body>
