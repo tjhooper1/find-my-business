@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { AdSlot } from "@/components/ad-slot";
 import {
   DIMENSIONS,
   QUESTIONS,
@@ -119,6 +120,8 @@ export function Results() {
           </ul>
         </section>
       )}
+
+      <AdSlot placement="results" />
 
       {result.notRightNow.length > 0 && (
         <section>

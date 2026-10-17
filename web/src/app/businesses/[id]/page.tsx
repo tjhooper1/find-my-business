@@ -12,6 +12,7 @@ import {
   type DimensionId,
   type TraitTarget,
 } from "find-my-business-engine";
+import { AdSlot } from "@/components/ad-slot";
 import { ResourceLink } from "@/components/resource-link";
 import { formatCostRange, MODE_LABEL, skillName } from "@/lib/format";
 
@@ -104,6 +105,8 @@ async function BusinessDetails({ params }: { params: PageProps<"/businesses/[id]
           </p>
         )}
       </section>
+
+      <AdSlot placement="business" className="mt-10" />
 
       <section className="mt-10">
         <h2 className="text-xl font-bold">Skills that help</h2>

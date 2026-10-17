@@ -36,8 +36,9 @@ export default function DisclosurePage() {
 
       <h2>Display ads</h2>
       <p>
-        We may show ads in the future. Advertisers won&apos;t influence your results, and we&apos;ll update this
-        page and our <Link href="/privacy">privacy policy</Link> before we do.
+        Some pages show ads from Google AdSense, always labeled &ldquo;Advertisement.&rdquo; Advertisers
+        don&apos;t choose or influence your results, and we never show ads inside the quiz. See our{" "}
+        <Link href="/privacy">privacy policy</Link> for how ad cookies work.
       </p>
 
       <h2>Questions</h2>

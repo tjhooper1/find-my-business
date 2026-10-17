@@ -2,7 +2,8 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import { SITE_URL } from "@/lib/site";
+import Script from "next/script";
+import { ADSENSE_CLIENT, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
   },
   description:
     "A free 10-minute quiz that finds your founder type and matches you to businesses you'd actually enjoy running.",
+  // AdSense site verification.
+  other: { "google-adsense-account": ADSENSE_CLIENT },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -71,6 +74,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
         </footer>
         <Analytics />
+        {/* AdSense loader. With Auto ads off, ads only appear in <AdSlot> placements. */}
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   );

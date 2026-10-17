@@ -14,8 +14,8 @@ export default function PrivacyPage() {
     <>
       <h1>Privacy policy</h1>
       <p>
-        The short version: your quiz answers stay in your browser, we don&apos;t sell personal information, and
-        we collect as little as we can.
+        The short version: your quiz answers stay in your browser, we don&apos;t sell them, and we collect as
+        little as we can. Ads on the site come from Google, which uses cookies.
       </p>
 
       <h2>Your quiz answers</h2>
@@ -42,11 +42,25 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
+      <h2>Advertising</h2>
+      <p>
+        We show ads through Google AdSense. Google and its partners use cookies and similar technologies to serve
+        ads based on your visits to this and other websites, to limit how often you see an ad and to measure
+        results. Google&apos;s use of this data is described in{" "}
+        <a href="https://policies.google.com/technologies/partner-sites">
+          how Google uses information from sites that use its services
+        </a>
+        . You can turn off personalized ads at <a href="https://myadcenter.google.com">My Ad Center</a>, and
+        learn about opting out of other vendors at <a href="https://optout.aboutads.info">aboutads.info</a>.
+        Where required (for example, in the EU and UK), we ask for your consent first.
+      </p>
+
       <h2>Cookies</h2>
       <p>
-        We don&apos;t currently set cookies, including for analytics. When you follow a link to another site, including affiliate partners,
-        that site may set its own cookies, for example to credit us with a referral. Their privacy policies apply
-        there. See our <Link href="/disclosure">affiliate disclosure</Link>.
+        We don&apos;t set cookies ourselves, and our analytics don&apos;t use them. Our advertising partners do,
+        as described above. When you follow a link to another site, including affiliate partners, that site may
+        set its own cookies, for example to credit us with a referral. Their privacy policies apply there. See our{" "}
+        <Link href="/disclosure">affiliate disclosure</Link>.
       </p>
 
       <h2>Email</h2>
@@ -57,16 +71,18 @@ export default function PrivacyPage() {
 
       <h2>Sharing and selling</h2>
       <p>
-        We don&apos;t sell or rent personal information, and we don&apos;t share it for targeted advertising. We
-        may disclose information if required by law.
+        We don&apos;t sell or rent your quiz answers or contact details. The advertising cookies described above
+        may count as &ldquo;sharing&rdquo; for targeted advertising under some US state laws. We may disclose
+        information if required by law.
       </p>
 
       <h2>Your rights</h2>
       <p>
         Depending on where you live (for example, California), you may have the right to know what personal
-        information we hold about you, to ask us to delete it, and to opt out of its sale or sharing. We don&apos;t
-        sell or share it, but you can contact us with any request and we&apos;ll respond within the time required
-        by law.
+        information we hold about you, to ask us to delete it, and to opt out of its sale or sharing for targeted
+        advertising. To opt out, use the privacy choices shown on the site where available, turn off personalized
+        ads at <a href="https://myadcenter.google.com">My Ad Center</a>, or enable Global Privacy Control in your
+        browser. You can also contact us with any request and we&apos;ll respond within the time required by law.
       </p>
 
       <h2>Children</h2>
