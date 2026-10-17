@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 // Keep this in sync with what the site actually does. Update it BEFORE adding
-// email capture, analytics, ads or any new tracking.
+// email capture, ads or any new tracking.
 export default function PrivacyPage() {
   return (
     <>
@@ -32,6 +32,11 @@ export default function PrivacyPage() {
           as IP address, browser type and the pages requested) to deliver the site and keep it secure.
         </li>
         <li>
+          <strong>Page analytics.</strong> We use Vercel Web Analytics to count page views and see which pages are
+          popular, along with general information such as country, browser, device type and referring site. It
+          doesn&apos;t use cookies or identify you across sites or visits.
+        </li>
+        <li>
           <strong>Outbound link clicks.</strong> When you click a resource link, we record which resource, which
           of our pages you clicked from and when. We don&apos;t link this to your identity.
         </li>
@@ -39,7 +44,7 @@ export default function PrivacyPage() {
 
       <h2>Cookies</h2>
       <p>
-        We don&apos;t currently set cookies. When you follow a link to another site, including affiliate partners,
+        We don&apos;t currently set cookies, including for analytics. When you follow a link to another site, including affiliate partners,
         that site may set its own cookies, for example to credit us with a referral. Their privacy policies apply
         there. See our <Link href="/disclosure">affiliate disclosure</Link>.
       </p>
