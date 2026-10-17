@@ -61,3 +61,9 @@ body {
   background: var(--bg);
   color: var(--ink);
 }
+
+/* AdSense sets data-ad-status once it responds; hide the whole slot (label
+   included) when there's no ad, e.g. before approval or with no inventory. */
+aside:has(> ins.adsbygoogle[data-ad-status="unfilled"]) {
+  display: none;
+}

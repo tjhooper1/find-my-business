@@ -8,10 +8,10 @@ export const GOVERNING_STATE = "North Carolina";
 
 export const LEGAL_UPDATED = "October 17, 2026";
 
-// AdSense. The publisher id is public (it's in ads.txt). Each placement stays
-// empty until its ad unit's slot id is set as an env var in Vercel.
+// AdSense. Publisher and slot ids are public (they ship in every page). A
+// placement renders nothing until it has a slot id from AdSense → Ads → By ad unit.
 export const ADSENSE_CLIENT = "ca-pub-9843431103518753";
-export const AD_SLOTS = {
-  business: process.env.NEXT_PUBLIC_ADSENSE_SLOT_BUSINESS,
-  results: process.env.NEXT_PUBLIC_ADSENSE_SLOT_RESULTS,
+export const AD_SLOTS: Record<"business" | "results", string | undefined> = {
+  business: "1803437109",
+  results: undefined,
 };
