@@ -34,6 +34,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* Impact (affiliate network) site verification. Impact expects `value`, not `content`. */}
+        <meta name="impact-site-verification" {...{ value: "d258deca-7dee-4e0f-bce4-2e93352891b5" }} />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         <header className="border-b border-line">
           <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4">
