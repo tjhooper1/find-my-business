@@ -192,6 +192,9 @@ function ProfileSummary({ profile }: { profile: Profile }) {
         </p>
         <p className="mt-4 text-xl font-semibold">{primary.tagline}</p>
         <p className="mt-2 max-w-2xl">{primary.description}</p>
+        <Link href={`/types/${primary.id}`} className="mt-4 inline-block font-semibold underline">
+          Blind spots and advice for {primary.name.replace(/^The /, "")}s →
+        </Link>
       </div>
 
       <h2 className="mt-8 text-xl font-bold">What makes you tick</h2>

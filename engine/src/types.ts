@@ -179,6 +179,10 @@ export interface Archetype {
   emoji: string;
   tagline: string;
   description: string;
+  /** Hand-written: where this type tends to trip up. Shown on the type's page. */
+  blindSpots: string[];
+  /** Hand-written: one piece of practical advice for this type. */
+  advice: string;
   traits: Partial<Record<DimensionId, TraitTarget>>;
 }
 

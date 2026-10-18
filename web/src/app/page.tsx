@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ARCHETYPES, BUSINESSES, QUESTIONS, CONSTRAINT_QUESTIONS } from "find-my-business-engine";
+import { ArchetypeGrid } from "@/components/archetype-grid";
 
 const QUESTION_COUNT = QUESTIONS.length + CONSTRAINT_QUESTIONS.length;
 const CATEGORY_COUNT = new Set(BUSINESSES.map((b) => b.category)).size;
@@ -66,17 +67,9 @@ export default function Home() {
 
       <section className="mx-auto max-w-5xl px-4 py-16">
         <h2 className="text-2xl font-bold">Which founder type are you?</h2>
-        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {ARCHETYPES.map((a) => (
-            <li key={a.id} className="rounded-xl border border-line bg-surface p-4">
-              <div className="text-2xl" aria-hidden>
-                {a.emoji}
-              </div>
-              <div className="mt-2 font-semibold">{a.name}</div>
-              <div className="mt-1 text-sm text-muted">{a.tagline}</div>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-6">
+          <ArchetypeGrid />
+        </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-4 pb-16">

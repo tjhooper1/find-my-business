@@ -45,6 +45,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               Sidequest <span className="text-brand">Biz</span>
             </Link>
             <div className="flex items-center gap-4 text-sm">
+              <Link href="/types" className="hidden text-muted hover:text-ink sm:inline">
+                Founder types
+              </Link>
               <Link href="/businesses" className="text-muted hover:text-ink">
                 Browse ideas
               </Link>

@@ -11,6 +11,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🔧",
     tagline: "If it's broken, you're already curious.",
     description: "You learn by taking things apart and you trust what you can test with your own hands. Give you a stubborn problem and a free afternoon and you're happy. Customers love you because you actually fix things.",
+    blindSpots: [
+      "Pricing like a hobbyist. You'll spend three hours on a fix and bill for one because it was fun.",
+      "Hiding in the workshop. Marketing and follow-up calls feel like a distraction from the real work, so they don't happen.",
+      "Rabbit holes. Not every job needs the perfect fix, just one the customer will pay for.",
+    ],
+    advice: "Write a price list before your first job and stick to it. Charging for your time, not your enjoyment, is the difference between a business and a hobby that pays for parts.",
     traits: { hands: [0.9, 3], analyt: [0.75, 2], extra: [0.3, 1], auton: [0.75, 1], creat: [0.4, 1], visib: [0.2, 1] },
   },
   {
@@ -19,6 +25,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🪵",
     tagline: "You'd rather make it than buy it.",
     description: "You have good taste and good hands, and you're happiest when the two meet. You'd take a quiet workshop and a finished piece over a crowded room any day. People buy from you because there's a bit of you in everything you make.",
+    blindSpots: [
+      "Making what you love instead of what sells. Test demand with a few pieces before you make fifty.",
+      "Underpricing handmade work. Materials plus a little extra isn't a price; your hours count too.",
+      "Waiting until it's perfect to show anyone.",
+    ],
+    advice: "Post your process, not just the finished piece. People buy handmade for the story, and showing the work is the gentlest marketing there is.",
     traits: { creat: [0.85, 3], hands: [0.85, 2.5], extra: [0.3, 1], visib: [0.25, 1], scale: [0.35, 1] },
   },
   {
@@ -27,6 +39,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🎨",
     tagline: "Taste is your superpower.",
     description: "You see what looks off before anyone else does, and you can't help fixing it. Give you a laptop and a brief and you'll turn it into something people remember. Your edge is an eye that's hard to teach.",
+    blindSpots: [
+      "Saying yes to every revision. Without a clear scope, one project quietly becomes three.",
+      "Hearing feedback on your work as feedback on you.",
+      "Letting the business side slide: invoices, contracts and chasing late payments.",
+    ],
+    advice: "Pick a niche and a package. \"Brand identity for local restaurants, $1,500\" is easier to sell, and easier to say yes to, than \"I do design.\"",
     traits: { creat: [0.9, 3], hands: [0.15, 2], open: [0.75, 1], extra: [0.4, 1], analyt: [0.45, 0.5] },
   },
   {
@@ -35,6 +53,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🎤",
     tagline: "Give you a mic and you'll give them a show.",
     description: "Attention energizes you instead of scaring you. You've got ideas, opinions and the nerve to share them with strangers. Building an audience is a long game, and it's your natural one.",
+    blindSpots: [
+      "Chasing the next idea before the last one has had time to work. Audiences reward consistency.",
+      "Measuring success in views instead of revenue.",
+      "Burning out. Being \"on\" all the time is exhausting, even for you.",
+    ],
+    advice: "Decide how you'll make money before you start posting. An audience is an asset only if there's something for it to buy, book or subscribe to.",
     traits: { visib: [0.9, 3], extra: [0.8, 2], creat: [0.75, 2], open: [0.75, 1] },
   },
   {
@@ -43,6 +67,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🤝",
     tagline: "You could sell sand at the beach (ethically).",
     description: "Conversations are where you shine, and \"no\" just means \"not yet.\" You read people quickly, you're comfortable talking money, and you'd rather eat what you kill than wait for a paycheck.",
+    blindSpots: [
+      "Overpromising to close the deal, then scrambling to deliver.",
+      "Getting bored after the sale. Delivery and follow-up matter as much as the pitch.",
+      "Taking on risk faster than your cash flow can handle.",
+    ],
+    advice: "Pair up early. A partner, an assistant or a simple system that handles delivery frees you to do what you're best at: finding the next customer.",
     traits: { sales: [0.9, 3], extra: [0.8, 2], risk: [0.7, 1.5], persist: [0.75, 1], stab: [0.7, 1] },
   },
   {
@@ -51,6 +81,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🏰",
     tagline: "Why have one when you could have fifty?",
     description: "You think in systems and scale. You're the one asking how to make a thing run without you. Risk doesn't scare you off and you're willing to grind for years. A side hustle is just step one.",
+    blindSpots: [
+      "Planning location fifty before proving location one works.",
+      "Spending on growth too early: ads, hires and tools before customers.",
+      "Treating every slow month as a crisis. Big things take time, even for you.",
+    ],
+    advice: "Build the boring version first. Get ten paying customers with a scrappy setup and write down exactly what worked. That playbook is what you scale.",
     traits: { scale: [0.9, 3], risk: [0.85, 2], auton: [0.85, 1.5], persist: [0.85, 1.5] },
   },
   {
@@ -59,6 +95,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🧩",
     tagline: "Give you a hard problem and some quiet.",
     description: "You're happiest deep in a problem other people find boring or scary: data, code, systems, numbers. You'd rather solve it than talk about it. Clients pay you for answers they couldn't find themselves.",
+    blindSpots: [
+      "Waiting for clients to find you. Great work doesn't sell itself, at least not at first.",
+      "Over-engineering. The client wanted an answer, not a perfect system.",
+      "Explaining how you did it when the client only cares about the result.",
+    ],
+    advice: "Write about the problems you solve. A few clear posts or case studies do your selling for you, no cold calls required.",
     traits: { analyt: [0.9, 3], extra: [0.2, 2], hands: [0.2, 1], consc: [0.65, 1] },
   },
   {
@@ -67,6 +109,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "📋",
     tagline: "Reliable is underrated, and you know it.",
     description: "You like a clear process, a predictable week and a job done right the first time. Flashy isn't your thing, dependable is. That's exactly why clients stick with you for years.",
+    blindSpots: [
+      "Playing it so safe you never raise prices or try a new service.",
+      "Getting thrown when things don't go to plan. Small businesses are messy.",
+      "Under-marketing. Reliability is your best feature, but people have to hear about it.",
+    ],
+    advice: "Ask every happy client for a review and a referral. Word of mouth is how dependable businesses grow, and you'll have plenty of happy clients.",
     traits: { struct: [0.85, 2.5], consc: [0.85, 2.5], risk: [0.2, 1.5], scale: [0.3, 1], creat: [0.3, 0.5] },
   },
   {
@@ -75,6 +123,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "💛",
     tagline: "People (and pets) feel safe with you.",
     description: "You're patient, warm and calm when others are stressed. Looking after people, kids or animals doesn't drain you, it fills you up. Families trust you with what matters most to them.",
+    blindSpots: [
+      "Undercharging because asking for money feels unkind.",
+      "Saying yes to everyone, then running out of energy for yourself.",
+      "Avoiding self-promotion, so the people who need you never find you.",
+    ],
+    advice: "Set your boundaries before you open: hours, rates and what's included. Clear rules make it easier to be generous inside them, and they keep you from burning out.",
     traits: { help: [0.9, 3], agree: [0.85, 2], stab: [0.75, 1.5], visib: [0.3, 1], sales: [0.3, 0.5] },
   },
   {
@@ -83,6 +137,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🧭",
     tagline: "You make hard things click for people.",
     description: "You love the moment someone finally gets it. You can explain things and push people a little, and you don't mind being in front of a group. People don't just learn from you, they change because of you.",
+    blindSpots: [
+      "Giving everything away for free and never making the offer.",
+      "Building the business around your own energy, so it stops whenever you need a break.",
+      "Spreading across too many topics. People look for a specialist.",
+    ],
+    advice: "Package what you teach around a clear result. \"Conversational Spanish in 12 weeks\" sells better than open-ended lessons, and it's easier to plan.",
     traits: { help: [0.85, 2.5], extra: [0.7, 2], visib: [0.65, 1.5], agree: [0.55, 0.5], analyt: [0.55, 0.5] },
   },
   {
@@ -91,6 +151,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🍳",
     tagline: "Your happy place is a full room.",
     description: "Feeding people, running the party, keeping the energy up: that's your thing. You're on your feet, good with people and calm when it gets busy. Customers come back for the experience as much as the product.",
+    blindSpots: [
+      "Thin margins. A full room isn't always a profitable one, so track your costs per event or order.",
+      "Doing everything yourself on busy days instead of building a team.",
+      "Underestimating permits, insurance and the paperwork side.",
+    ],
+    advice: "Start small and test: a pop-up, a single class or one weekend market before you sign a lease or buy a truck. You'll learn what people love, and what they'll pay for, without betting the house.",
     traits: { extra: [0.85, 2.5], hands: [0.7, 2], help: [0.7, 1.5], stab: [0.7, 1], creat: [0.55, 0.5] },
   },
   {
@@ -99,6 +165,12 @@ export const ARCHETYPES: Archetype[] = [
     emoji: "🃏",
     tagline: "Routine? Never heard of her.",
     description: "You're curious, adaptable and allergic to doing the same thing twice. You spot opportunities other people walk past and you're happy to improvise. The right business for you has lots of variety, and you're the one who gets to choose it.",
+    blindSpots: [
+      "Starting five things and finishing none.",
+      "Dodging the routine tasks every business has, like bookkeeping and follow-ups.",
+      "Pivoting right before it starts working.",
+    ],
+    advice: "Give each idea a 90-day test with one clear goal, like ten paying customers. Hit it and keep going; miss it and move on, guilt-free. That way your curiosity works for you.",
     traits: { open: [0.85, 2.5], struct: [0.15, 2.5], auton: [0.8, 1.5], risk: [0.65, 1], consc: [0.4, 0.5] },
   },
 ];

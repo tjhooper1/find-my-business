@@ -1,7 +1,7 @@
 export * from "./types";
 export { computeProfile, type ProfileResult } from "./profile";
 export { matchBusinesses, fitScore, traitFit, readiness, exclusionReasons, type MatchOptions } from "./match";
-export { assignArchetype } from "./archetype";
+export { archetypeGuide, archetypeProfile, assignArchetype, type ArchetypeGuide, type ToughFit } from "./archetype";
 export { ARCHETYPES } from "./data/archetypes";
 export { starterKit, coursesForSkills, resourceById, STAGES } from "./resources";
 export { RESOURCES } from "./data/resources";

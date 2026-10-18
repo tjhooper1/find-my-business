@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { assignArchetype } from "../src/archetype";
+import { archetypeGuide, assignArchetype } from "../src/archetype";
 import { ARCHETYPES } from "../src/data/archetypes";
 import { DIMENSION_IDS, type Profile } from "../src/types";
 import { PERSONAS } from "./personas";
@@ -25,5 +25,22 @@ describe("archetypes", () => {
       const { primary, secondary } = assignArchetype(persona.profile);
       expect(secondary.id).not.toBe(primary.id);
     }
+  });
+});
+
+describe("archetypeGuide", () => {
+  it.each(ARCHETYPES.map((a) => [a.id, a] as const))("%s has a full, explainable page", (_, a) => {
+    const g = archetypeGuide(a);
+    expect(a.blindSpots).toHaveLength(3);
+    expect(a.advice.length).toBeGreaterThan(40);
+    expect(g.strengths.length).toBeGreaterThanOrEqual(3);
+    expect(g.bestFits.length).toBeGreaterThanOrEqual(4);
+    for (const m of g.bestFits) expect(m.reasons.length).toBeGreaterThan(0);
+    expect(g.toughFits.length).toBeGreaterThanOrEqual(3);
+    for (const t of g.toughFits) expect(t.clashes.length).toBeGreaterThan(0);
+    expect(new Set(g.toughFits.map((t) => t.business.category)).size).toBe(g.toughFits.length);
+    // Best and tough fits never overlap, and best fits clearly outscore tough ones.
+    expect(Math.min(...g.bestFits.map((m) => m.fit))).toBeGreaterThan(Math.max(...g.toughFits.map((t) => t.fit)));
+    expect(g.cousins.map((c) => c.archetype.id)).not.toContain(a.id);
   });
 });
