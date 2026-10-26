@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   },
   description:
     "A free 10-minute quiz that finds your founder type and matches you to businesses you'd actually enjoy running.",
+  // Search Console site verification.
+  verification: { google: "ovdKJiq_qpgvdtrnWSgtIf8_l7HX-lkocqUEdwv0MJE" },
   // AdSense site verification.
   other: { "google-adsense-account": ADSENSE_CLIENT },
 };
