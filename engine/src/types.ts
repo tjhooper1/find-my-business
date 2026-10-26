@@ -102,6 +102,22 @@ export type BusinessMode = "online" | "local" | "hybrid";
 /** [target 0–1, importance weight]. Dimensions not listed are ignored. */
 export type TraitTarget = [target: number, weight: number];
 
+/**
+ * Long-form write-up for a business page. Businesses without one stay out of
+ * search (noindex) until one is written and reviewed.
+ */
+export interface BusinessGuide {
+  /** What the work actually is, beyond the one-line summary. One string per paragraph. */
+  overview: string[];
+  typicalWeek: string[];
+  /** Steps toward the first paying customers, in order. */
+  firstCustomers: string[];
+  /** How people usually charge. No specific prices: those vary too much to state. */
+  pricing: string;
+  mistakes: string[];
+  skipIf: string[];
+}
+
 export interface Business {
   id: string;
   name: string;

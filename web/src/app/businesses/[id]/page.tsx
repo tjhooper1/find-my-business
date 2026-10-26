@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import {
   BUSINESSES,
   DIMENSION_BY_ID,
+  GUIDES,
   STAGES,
   coursesForSkills,
   starterKit,
@@ -34,6 +35,8 @@ export async function generateMetadata({ params }: PageProps<"/businesses/[id]">
   return {
     title: `${b.name}: is it the right business for you?`,
     description: b.summary,
+    // Template-only pages stay out of search until they have a write-up.
+    robots: GUIDES[b.id] ? undefined : { index: false, follow: true },
   };
 }
 
@@ -54,6 +57,7 @@ export default function BusinessPage({ params }: PageProps<"/businesses/[id]">) 
 
 async function BusinessDetails({ params }: { params: PageProps<"/businesses/[id]">["params"] }) {
   const b = getBusiness((await params).id);
+  const guide = GUIDES[b.id];
 
   const traits = (Object.entries(b.traits) as [DimensionId, TraitTarget][])
     .sort(([, [, wa]], [, [, wb]]) => wb - wa)
@@ -82,6 +86,19 @@ async function BusinessDetails({ params }: { params: PageProps<"/businesses/[id]
       </dl>
       <p className="mt-2 text-xs text-muted">Rough estimates. Costs and timelines vary a lot by location and niche.</p>
 
+      {guide && (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold">What the work is really like</h2>
+          {guide.overview.map((p) => (
+            <p key={p} className="mt-3">
+              {p}
+            </p>
+          ))}
+          <h3 className="mt-6 font-semibold">A typical week</h3>
+          <BulletList items={guide.typicalWeek} />
+        </section>
+      )}
+
       <section className="mt-10">
         <h2 className="text-xl font-bold">Who thrives at this</h2>
         <ul className="mt-3 space-y-2">
@@ -106,7 +123,37 @@ async function BusinessDetails({ params }: { params: PageProps<"/businesses/[id]
         )}
       </section>
 
-      <AdSlot placement="business" className="mt-10" />
+      {/* Ads only on pages with real content, never on template-only ones. */}
+      {guide && <AdSlot placement="business" className="mt-10" />}
+
+      {guide && (
+        <>
+          <section className="mt-10">
+            <h2 className="text-xl font-bold">Landing your first customers</h2>
+            <ol className="mt-3 list-decimal space-y-2 pl-6">
+              {guide.firstCustomers.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+          </section>
+
+          <section className="mt-10">
+            <h2 className="text-xl font-bold">How people charge</h2>
+            <p className="mt-3">{guide.pricing}</p>
+          </section>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <section className="rounded-2xl border border-line bg-surface p-5">
+              <h2 className="text-lg font-bold">Common beginner mistakes</h2>
+              <BulletList items={guide.mistakes} />
+            </section>
+            <section className="rounded-2xl border border-line bg-surface p-5">
+              <h2 className="text-lg font-bold">Probably skip it if…</h2>
+              <BulletList items={guide.skipIf} />
+            </section>
+          </div>
+        </>
+      )}
 
       <section className="mt-10">
         <h2 className="text-xl font-bold">Skills that help</h2>
@@ -141,6 +188,16 @@ async function BusinessDetails({ params }: { params: PageProps<"/businesses/[id]
         </Link>
       </section>
     </>
+  );
+}
+
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-3 list-disc space-y-1.5 pl-6">
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
   );
 }
 

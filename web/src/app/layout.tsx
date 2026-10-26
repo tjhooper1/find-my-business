@@ -68,6 +68,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               figures are rough estimates. Some links are affiliate links.
             </p>
             <nav className="flex flex-wrap gap-4">
+              <Link href="/about" className="hover:text-ink">
+                About
+              </Link>
               <Link href="/privacy" className="hover:text-ink">
                 Privacy
               </Link>

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { BUSINESSES } from "../src/data/businesses";
 import { DIMENSIONS, SKILL_IDS } from "../src/data/dimensions";
+import { GUIDES } from "../src/data/guides";
 import { LIKERT, QUESTIONS, SCENARIOS } from "../src/data/questions";
 import { DIMENSION_IDS } from "../src/types";
 
@@ -58,5 +59,17 @@ describe("business catalog", () => {
     expect(b.startupCost[0]).toBeLessThanOrEqual(b.startupCost[1]);
     expect(b.skills.length).toBeGreaterThan(0);
     for (const s of b.skills) expect(SKILL_IDS.has(s), `unknown skill ${s}`).toBe(true);
+  });
+});
+
+describe("business guides", () => {
+  it.each(Object.entries(GUIDES))("%s belongs to a real business and fills every section", (id, guide) => {
+    expect(BUSINESSES.some((b) => b.id === id)).toBe(true);
+    expect(guide.overview.length).toBeGreaterThan(0);
+    expect(guide.typicalWeek.length).toBeGreaterThanOrEqual(3);
+    expect(guide.firstCustomers.length).toBeGreaterThanOrEqual(3);
+    expect(guide.pricing.length).toBeGreaterThan(0);
+    expect(guide.mistakes.length).toBeGreaterThanOrEqual(3);
+    expect(guide.skipIf.length).toBeGreaterThanOrEqual(2);
   });
 });
